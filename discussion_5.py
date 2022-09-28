@@ -1,10 +1,11 @@
+from itertools import count
 import unittest
 
 # Counts the number of a's in a sentence (e.g., a string)
 def count_a(sentence):
 	total = 0
-	for i in range(len(sentence)):
-		if i == 'a':
+	for i in sentence:
+		if i.lower() == 'a':
 			total += 1
 	return total
 
@@ -63,17 +64,21 @@ class TestAllMethods(unittest.TestCase):
 
 	## Check to see whether count_a works
 	def test_count_a(self):
-		pass
+		sentence = "Hello, world"
+		print("count with no a in sentence: " + str(count_a(sentence)))
 
+		sentence_a = "Apples"
+		print("count with a in sentence: " + str(count_a(sentence_a)))
 
 	## Check to see whether you can add an item to the warehouse
 	def test_add_item(self):
-		pass
-
+		print("adding item")
+		Warehouse.add_item(self, self.item1)
 
 	## Check to see whether warehouse correctly returns the item with the most stock
 	def test_warehouse_max_stocks(self):
-		pass
+		print("blah")
+		
 
 
 	# Check to see whether the warehouse correctly return the item with the highest price
